@@ -64,7 +64,7 @@ const urls = [
 
 urls.forEach((url) => {
   uiv.open(url + postfix);
-  uiv.sleep('10s');
+  uiv.sleep('5s');
   let found = uiv.eval(`
     return document.body.innerText.replace(/\u00A0/g, ' ').includes('Ничего не найдено');
   `);
