@@ -9,10 +9,11 @@ const urls = [
 
 urls.forEach((url) => {
   uiv.open(url + postfix);
+  uiv.sleep('2s');
 
   try {
     const toogle = uiv.$('[data-testid="post_context_menu_toggle"]');
-    uiv.sleep('1s');
+    uiv.sleep('2s');
     uiv.page.click(toogle);
 
     const del = uiv.$('[data-testid="post_context_menu_item_delete"]');
