@@ -62,8 +62,9 @@ const urls = [
   'https://vk.ru/club75853121'
 ];
 
-urls.forEach((url) => {
+urls.forEach((url, index) => {
   uiv.open(url + postfix);
+  uiv.banner('Адрес ' + (index + 1) + ' из ' + urls.length);
   uiv.sleep('5s');
   let found = uiv.eval(`
     return document.body.innerText.replace(/\u00A0/g, ' ').includes('Ничего не найдено');

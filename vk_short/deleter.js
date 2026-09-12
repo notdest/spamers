@@ -7,8 +7,9 @@ const urls = [
   'https://vk.ru/donorbaby',
 ];
 
-urls.forEach((url) => {
+urls.forEach((url, index) => {
   uiv.open(url + postfix);
+  uiv.banner('Адрес ' + (index + 1) + ' из ' + urls.length);
   uiv.sleep('2s');
 
   try {

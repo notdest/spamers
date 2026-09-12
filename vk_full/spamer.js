@@ -109,6 +109,7 @@ const messages = [
 
 urls.forEach((url, index) => {
   try {
+    uiv.banner('Адрес ' + (index + 1) + ' из ' + urls.length);
     const message = messages[index % messages.length];
     spam(url, message)
   } catch (error) {
