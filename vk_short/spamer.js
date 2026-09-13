@@ -79,6 +79,29 @@ function spam(url, message) {
     el.dispatchEvent(new Event('input', { bubbles: true }));
   `);
 
+  // -------- Ставим фотку
+  const buttonPhoto = uiv.$('[data-testid="posting_base_screen_select_from_vk"]');
+  uiv.page.click(buttonPhoto);
+  uiv.sleep('2s');
+
+  const buttonPhoto2 = uiv.$('[data-testid="posting_base_screen_select_photo_vk"]');
+  uiv.page.click(buttonPhoto2);
+  uiv.sleep('2s');
+
+  const albumSaved = uiv.$('[data-testid="posting_photo_picker_top_albums_item"]');
+  uiv.page.click(albumSaved);
+  uiv.sleep('2s');
+
+  const firstPhoto = uiv.$('[data-testid="posting_photo_picker_photos_item"]');
+  uiv.page.click(firstPhoto);
+  uiv.sleep('2s');
+
+  const savePhoto = uiv.$('[data-testid="posting_photo_picker_footer_submit_button"]');
+  uiv.page.click(savePhoto);
+  uiv.sleep('2s');
+  // --------
+
+
   const buttonNext = uiv.$('[data-testid="posting_base_screen_next"]');
   uiv.page.click(buttonNext);
   uiv.sleep('2s');
