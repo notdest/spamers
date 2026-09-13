@@ -80,10 +80,27 @@ function spam(url, message) {
   `);
 
   const buttonNext = uiv.$('[data-testid="posting_base_screen_next"]');
-  uiv.sleep('1s');
   uiv.page.click(buttonNext);
+  uiv.sleep('2s');
 
-  uiv.sleep('1s');
+  // -------- Ставим локацию Москва
+  const buttonGeo = uiv.$('[data-testid="posting_geo_picker_cell"]');
+  uiv.page.click(buttonGeo);
+  uiv.sleep('3s');
+
+  const inputGeo = uiv.$('[data-testid="posting_geo_picker_search_input"]');
+  uiv.page.type(inputGeo, 'Москва');
+  uiv.sleep('3s');
+
+  const buttonMoscow = uiv.$('[data-testid="posting_geo_picker_place_row"]');
+  uiv.page.click(buttonMoscow);
+  uiv.sleep('2s');
+
+  const buttonSaveGeo = uiv.$('[data-testid="posting_geo_picker_save_button"]');
+  uiv.page.click(buttonSaveGeo);
+  uiv.sleep('2s');
+
+  //----------- Дальше сохраняем
   const buttonSubmit = uiv.$('[data-testid="posting_submit_button"]');
   uiv.sleep('1s');
   uiv.page.click(buttonSubmit);
